@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <title>Login</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url(Images/Blue\ 1.jpg);
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+    }
+
+    hr { 
+      display: block;
+      margin-bottom: 1.5em;
+      border-style: inset;
+      border-width: 1px;
+    } 
+    
+    .form-container {
+      width: 300px;
+      margin: 100px auto;
+      background-color: rgba(255, 255, 255);
+      padding: 10px 40px 10px 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 1em;
+      font-size: 28px;
+    }
+
+    .form-container [id="account"] {
+      text-align: center;
+      font-size: 12px;
+      margin-bottom: 18px;
+      color: gray;
+    }
+
+    .form-container [id="account"] a{
+      color: #52aefb;
+      text-decoration: none;
+    }
+    
+    .form-container label {
+      display: block;
+      margin-bottom: 4px;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    
+    .form-container input[type="text"] {
+      width: 94%;
+      padding: 10px;
+      border: none;
+      border-bottom: 1px solid gray;
+      outline: none;
+      margin-bottom: 1.5em;
+      font-size: 14px;
+    }
+
+    .password-container input[type="password"],
+    .password-container input[type="text"] {
+      width: 94%;
+      padding: 10px;
+      border: none;
+      border-bottom: 1px solid gray;
+      outline: none;
+      margin-bottom: 1.5em;
+      font-size: 14px;
+    }
+
+    .fa-eye {
+      position: fixed;
+      top: 46%;
+      right: 39.5%;
+      font-size: 13px;
+      cursor: pointer;
+      color: #3939dc;
+    }
+    
+    .form-container button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #3939dc;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 17px;
+      font-weight: bold;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .form-container button:hover {
+      background-color: #52aefb;
+    }
+
+    .form-container a[class="forgotPassword"]{
+      text-decoration: none;
+      color: gray;
+      width: 94%;
+      padding: 10px;
+      font-size: 14px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Login</h2>
+    <hr>
+    <form>
+      <input type="text" id="email" name="email" placeholder="Email" autofocus required>
+      
+      <div class="password-container">
+      <input type="text" placeholder="Password" id="text" required>
+      <i class="fa-solid fa-eye" id="eye"></i>
+      </div>
+
+      <a href="#" class="forgotPassword">Forgot Password?</a>
+      
+      <button type="submit">Login</button>
+
+      <p id="account">Don't have an account? <a href="SignUp.html">Create Account</a></p>
+    </form>
+  </div>
+</body>
+
+  <script>
+    const passwordInput = document.querySelector("#text");
+    console.log("");
+    const eye = document.querySelector("#eye");
+    console.log("");
+    eye.addEventListener("click", function(){
+    this.classList.toggle("fa-eye-slash")
+    const type = passwordInput.getAttribute("type") === "text" ? "password" : "text"
+    passwordInput.setAttribute("type", type)
+    console.log(type);
+    })
+  </script>
+</html>

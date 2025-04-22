@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <title>SignUp</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url(Images/Blue\ 1.jpg);
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+    }
+    
+    .form-container {
+      width: 350px;
+      margin: 14px auto;
+      background-color: rgba(255, 255, 255);
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 7px;
+      font-size: 28px;
+    }
+
+    .form-container [id="account"] {
+      text-align: center;
+      font-size: 15px;
+      margin-top: 0;
+      margin-bottom: 18px;
+    }
+
+    .form-container [id="account"] a{
+      color: #52aefb;
+    }
+
+    .form-container [id="privacy"] {
+      text-align: center;
+      font-size: 11px;
+      color: gray;
+      margin-top: 15px;
+      margin-bottom: 1px;
+    }
+
+    .form-container [id="privacy"] a{
+      text-decoration: none;
+      color: #52aefb;
+    }
+    
+    .form-container label {
+      display: block;
+      margin-bottom: 2px;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    
+    .form-container input[type="text"] {
+      width: 94%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+      background-color: #d3d6f1;
+    }
+
+    .password-container input[type="password"],
+    .password-container input[type="text"] {
+      width: 94%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+      background-color: #d3d6f1;
+    }
+
+    .password-container ::placeholder {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .fa-eye {
+      position: absolute;
+      top: 36%;
+      right: 38%;
+      font-size: 13px;
+      cursor: pointer;
+      color: #3939dc;
+    }
+
+    .form-container input[type="phone"] {
+      width: 94%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+      margin-bottom: 10px;
+      background-color: #d3d6f1;
+    }
+
+    .form-container input[type="number"] {
+      width: 26.2%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+      margin-bottom: 10px;
+      background-color: #d3d6f1;
+      cursor: pointer;
+    }
+
+    .form-container label[id="sendReminder"] {
+      font-size: 12px;
+    }
+
+    .form-container input[id="sendReminder"] {
+      position: relative;
+      vertical-align: middle;
+    }
+
+    .form-container label[id="checkBox"] {
+      font-size: 15px;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+
+    .form-container label[id="checkBox"] a {
+      text-decoration: none;
+      color: #52aefb;
+    }
+
+    .form-container input[id="checkBox"] {
+      cursor: pointer;
+    }
+    
+    .form-container button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #3939dc;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 17px;
+      font-weight: bold;
+    }
+    
+    .form-container button:hover {
+      background-color: #52aefb;
+    }
+
+    .form-container span[id="optional"]{
+      color: gray;
+      font-style: italic;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Create account</h2>
+    <p id="account">Have an account? <a href="Login.html">Login</a></p>
+    <form>
+      <label for="email">Email</label>
+      <input type="text" id="email" name="email" placeholder="example@gmail.com" autofocus required>
+      
+      <div class="password-container">
+      <label for="password">Password</label>
+      <input type="text" placeholder="......." id="text" required>
+      <i class="fa-solid fa-eye" id="eye"></i>
+      </div>
+      
+      <label for="phoneNo">Phone</label>
+      <input type="phone" id="phoneNo" name="phoneNo" placeholder="+92 300 0000000" required>
+
+      <label for="date">Date of birth</label>
+      <input type="number" name="day" placeholder="Day" min="1" max="31" required>
+      <input type="number" name="month" placeholder="Month" min="1" max="12" required>
+      <input type="number" name="year" placeholder="Year" min="1900" max="2099" required>
+
+      <label>Send reminder <span id="optional">(optional)</span></label>
+      <label for="sendReminder" id="sendReminder">
+      <input type="checkbox" id="sendReminder" name="sendreminder">Via email</label>
+      <label for="sendReminder" id="sendReminder">
+      <input type="checkbox" id="sendReminder" name="sendreminder">Via SMS</label>
+
+      <label for="checkBox" id="checkBox">
+      <input type="checkbox" id="checkBox" name="checkbox" required>
+      I have read and agree to the <a href="#">Terms of Service</a></label>
+      
+      <button type="submit">Create account</button>
+      <p id="privacy">Read <a href="#">Privacy Policy</a></p>
+    </form>
+  </div>
+</body>
+
+  <script>
+    const passwordInput = document.querySelector("#text");
+    console.log("");
+    const eye = document.querySelector("#eye");
+    console.log("");
+    eye.addEventListener("click", function(){
+    this.classList.toggle("fa-eye-slash")
+    const type = passwordInput.getAttribute("type") === "text" ? "password" : "text"
+    passwordInput.setAttribute("type", type)
+    console.log("");
+    })
+  </script>
+</html>
