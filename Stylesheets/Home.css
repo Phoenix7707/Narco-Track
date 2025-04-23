@@ -253,7 +253,7 @@ header{
     border-radius: 50%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-.top-symptoms .more{
+.top-symptoms span{
     display: block;
     color: var(--main-color);
     font-size: 0.8rem;
@@ -456,6 +456,15 @@ header{
     text-align: justify;
     font-size: 1rem;
     color: var(--main-color);
+}
+
+@media (max-width: 768px){
+    .about-us{
+        flex-direction: column;
+    }
+    .narco h4, .vision h4{
+        text-align: center;
+    }
 }
 
 /* ########## Contact-Us Styling  ########## */
